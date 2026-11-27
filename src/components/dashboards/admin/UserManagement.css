@@ -1,0 +1,747 @@
+/* =========================================
+   USER MANAGEMENT PAGE
+========================================= */
+
+.user-management-page {
+  min-height: 100vh;
+  padding: 110px 35px 50px;
+  background: #f5f7fb;
+  box-sizing: border-box;
+}
+
+
+/* =========================================
+   HEADER
+========================================= */
+
+.user-page-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 30px;
+}
+
+.user-header-left {
+  width: 100%;
+}
+
+.back-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 20px;
+  color: #4a6cf7;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 600;
+  transition: 0.3s;
+}
+
+.back-button:hover {
+  color: #3154d8;
+  transform: translateX(-3px);
+}
+
+.user-heading {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.user-heading-icon {
+  width: 58px;
+  height: 58px;
+  border-radius: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(74, 108, 247, 0.12);
+  color: #4a6cf7;
+  font-size: 25px;
+}
+
+.user-heading h1 {
+  margin: 0;
+  color: #1f2937;
+  font-size: 30px;
+  font-weight: 700;
+}
+
+.user-heading p {
+  margin: 6px 0 0;
+  color: #6b7280;
+  font-size: 14px;
+}
+
+
+/* =========================================
+   TOOLBAR
+========================================= */
+
+.user-toolbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 18px;
+  margin-bottom: 22px;
+  background: #ffffff;
+  border-radius: 14px;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.06);
+}
+
+.user-search {
+  min-width: 320px;
+  flex: 1;
+  height: 45px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 0 15px;
+  background: #f8f9fc;
+  border: 1px solid #e5e7eb;
+  border-radius: 9px;
+  box-sizing: border-box;
+}
+
+.user-search svg {
+  color: #7b8190;
+  font-size: 15px;
+}
+
+.user-search input {
+  width: 100%;
+  height: 100%;
+  border: none;
+  outline: none;
+  background: transparent;
+  color: #333;
+  font-size: 14px;
+}
+
+.user-search input::placeholder {
+  color: #9ca3af;
+}
+
+.user-filters {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.user-filter {
+  height: 45px;
+  min-width: 130px;
+  padding: 0 12px;
+  border: 1px solid #e5e7eb;
+  border-radius: 9px;
+  background: #ffffff;
+  color: #374151;
+  outline: none;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.user-filter:focus {
+  border-color: #4a6cf7;
+}
+
+.user-count {
+  white-space: nowrap;
+  padding: 12px 15px;
+  border-radius: 9px;
+  background: #f1f4ff;
+  color: #555f75;
+  font-size: 14px;
+}
+
+.user-count strong {
+  color: #4a6cf7;
+}
+
+
+/* =========================================
+   TABLE CONTAINER
+========================================= */
+
+.users-table-container {
+  width: 100%;
+  overflow-x: auto;
+  background: #ffffff;
+  border-radius: 15px;
+  box-shadow: 0 5px 25px rgba(0, 0, 0, 0.06);
+}
+
+.users-table {
+  width: 100%;
+  min-width: 1000px;
+  border-collapse: collapse;
+}
+
+.users-table thead {
+  background: #f8f9fc;
+}
+
+.users-table th {
+  padding: 16px 15px;
+  text-align: left;
+  color: #4b5563;
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.4px;
+  border-bottom: 1px solid #e5e7eb;
+  white-space: nowrap;
+}
+
+.users-table td {
+  padding: 16px 15px;
+  color: #4b5563;
+  font-size: 14px;
+  border-bottom: 1px solid #eef0f4;
+  white-space: nowrap;
+}
+
+.users-table tbody tr {
+  transition: background 0.2s ease;
+}
+
+.users-table tbody tr:hover {
+  background: #fafbff;
+}
+
+.users-table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+
+/* =========================================
+   USER ID
+========================================= */
+
+.user-id {
+  color: #4a6cf7;
+  font-weight: 700;
+}
+
+
+/* =========================================
+   ROLE BADGES
+========================================= */
+
+.role-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 5px 10px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.role-badge.citizen {
+  color: #2563eb;
+  background: #dbeafe;
+}
+
+.role-badge.lawyer {
+  color: #7c3aed;
+  background: #ede9fe;
+}
+
+.role-badge.judge {
+  color: #047857;
+  background: #d1fae5;
+}
+
+.role-badge.clerk {
+  color: #b45309;
+  background: #fef3c7;
+}
+
+.role-badge.admin {
+  color: #be123c;
+  background: #ffe4e6;
+}
+
+
+/* =========================================
+   STATUS BADGES
+========================================= */
+
+.status-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 65px;
+  padding: 5px 10px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.status-badge.active {
+  color: #15803d;
+  background: #dcfce7;
+}
+
+.status-badge.inactive {
+  color: #b91c1c;
+  background: #fee2e2;
+}
+
+
+/* =========================================
+   ACTIONS
+========================================= */
+
+.user-actions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.user-actions button {
+  width: 34px;
+  height: 34px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+.user-actions button:hover {
+  transform: translateY(-2px);
+}
+
+
+/* VIEW */
+
+.user-actions .view-btn {
+  color: #2563eb;
+  background: #eff6ff;
+}
+
+.user-actions .view-btn:hover {
+  background: #dbeafe;
+}
+
+
+/* EDIT */
+
+.user-actions .edit-btn {
+  color: #7c3aed;
+  background: #f5f3ff;
+}
+
+.user-actions .edit-btn:hover {
+  background: #ede9fe;
+}
+
+
+/* STATUS */
+
+.user-actions .status-btn {
+  color: #059669;
+  background: #ecfdf5;
+  font-size: 20px;
+}
+
+.user-actions .status-btn:hover {
+  background: #d1fae5;
+}
+
+
+/* =========================================
+   NO RESULTS
+========================================= */
+
+.no-users {
+  padding: 50px 20px;
+  text-align: center;
+  color: #6b7280;
+  font-size: 15px;
+}
+
+
+/* =========================================
+   RESPONSIVE
+========================================= */
+
+@media (max-width: 1000px) {
+
+  .user-management-page {
+    padding: 100px 20px 40px;
+  }
+
+  .user-toolbar {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .user-search {
+    min-width: 100%;
+  }
+
+  .user-filters {
+    width: 100%;
+    flex-wrap: wrap;
+  }
+
+  .user-filter {
+    flex: 1;
+  }
+
+  .user-count {
+    text-align: center;
+  }
+}
+
+
+@media (max-width: 600px) {
+
+  .user-management-page {
+    padding: 90px 12px 30px;
+  }
+
+  .user-heading {
+    align-items: flex-start;
+  }
+
+  .user-heading-icon {
+    width: 48px;
+    height: 48px;
+    font-size: 20px;
+  }
+
+  .user-heading h1 {
+    font-size: 23px;
+  }
+
+  .user-heading p {
+    font-size: 12px;
+  }
+
+  .user-filters {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .user-filter {
+    width: 100%;
+  }
+
+  .user-count {
+    width: 100%;
+    box-sizing: border-box;
+  }
+}
+
+
+/* =========================================
+   EDIT USER FORM
+========================================= */
+
+.user-edit-card {
+  width: 100%;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 30px;
+  background: #ffffff;
+  border-radius: 16px;
+  box-shadow: 0 5px 25px rgba(0, 0, 0, 0.06);
+  box-sizing: border-box;
+}
+
+.user-form-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 22px;
+}
+
+.user-form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.user-form-group label {
+  color: #374151;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.user-form-group input,
+.user-form-group select {
+  width: 100%;
+  height: 45px;
+  padding: 0 13px;
+  border: 1px solid #dfe3ea;
+  border-radius: 9px;
+  background: #f9fafc;
+  color: #374151;
+  font-size: 14px;
+  outline: none;
+  box-sizing: border-box;
+  transition: 0.2s ease;
+}
+
+.user-form-group input:focus,
+.user-form-group select:focus {
+  border-color: #4a6cf7;
+  background: #ffffff;
+  box-shadow: 0 0 0 3px rgba(74, 108, 247, 0.1);
+}
+
+.user-form-group input:hover,
+.user-form-group select:hover {
+  border-color: #b8c2d6;
+}
+
+
+/* =========================================
+   EDIT USER BUTTONS
+========================================= */
+
+.user-form-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 12px;
+  margin-top: 30px;
+  padding-top: 22px;
+  border-top: 1px solid #eef0f4;
+}
+
+.user-cancel-btn,
+.user-save-btn {
+  min-width: 130px;
+  height: 43px;
+  padding: 0 20px;
+  border: none;
+  border-radius: 9px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+.user-cancel-btn {
+  color: #4b5563;
+  background: #f1f3f6;
+}
+
+.user-cancel-btn:hover {
+  background: #e5e7eb;
+}
+
+.user-save-btn {
+  color: #ffffff;
+  background: #4a6cf7;
+}
+
+.user-save-btn:hover {
+  background: #3154d8;
+  transform: translateY(-1px);
+}
+
+
+/* =========================================
+   VIEW USER DETAILS
+========================================= */
+
+.user-details-card {
+  width: 100%;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 30px;
+  background: #ffffff;
+  border-radius: 16px;
+  box-shadow: 0 5px 25px rgba(0, 0, 0, 0.06);
+  box-sizing: border-box;
+}
+
+
+/* =========================================
+   PROFILE HEADER
+========================================= */
+
+.user-profile-header {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  padding-bottom: 25px;
+  border-bottom: 1px solid #eef0f4;
+}
+
+.user-profile-icon {
+  width: 70px;
+  height: 70px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: rgba(74, 108, 247, 0.12);
+  color: #4a6cf7;
+  font-size: 27px;
+}
+
+.user-profile-header h2 {
+  margin: 0 0 8px;
+  color: #1f2937;
+  font-size: 24px;
+}
+
+
+/* =========================================
+   USER DETAILS GRID
+========================================= */
+
+.user-details-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 18px;
+  margin-top: 25px;
+}
+
+.user-detail-item {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  min-height: 75px;
+  padding: 15px;
+  border: 1px solid #eef0f4;
+  border-radius: 11px;
+  background: #fafbfc;
+  box-sizing: border-box;
+}
+
+.user-detail-icon {
+  width: 42px;
+  height: 42px;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 9px;
+  background: #eef2ff;
+  color: #4a6cf7;
+  font-size: 16px;
+}
+
+.user-detail-item > div:last-child {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  min-width: 0;
+}
+
+.user-detail-item span {
+  color: #6b7280;
+  font-size: 12px;
+}
+
+.user-detail-item strong {
+  color: #1f2937;
+  font-size: 14px;
+  word-break: break-word;
+}
+
+
+/* =========================================
+   VIEW USER ACTIONS
+========================================= */
+
+.user-details-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 12px;
+  margin-top: 28px;
+  padding-top: 22px;
+  border-top: 1px solid #eef0f4;
+}
+
+.user-edit-link,
+.user-back-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 125px;
+  height: 42px;
+  padding: 0 18px;
+  border-radius: 9px;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 600;
+  box-sizing: border-box;
+  transition: 0.2s ease;
+}
+
+.user-edit-link {
+  color: #ffffff;
+  background: #4a6cf7;
+}
+
+.user-edit-link:hover {
+  background: #3154d8;
+  transform: translateY(-1px);
+}
+
+.user-back-link {
+  color: #4b5563;
+  background: #f1f3f6;
+}
+
+.user-back-link:hover {
+  background: #e5e7eb;
+}
+
+
+/* =========================================
+   RESPONSIVE - EDIT / VIEW
+========================================= */
+
+@media (max-width: 800px) {
+
+  .user-form-grid,
+  .user-details-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .user-edit-card,
+  .user-details-card {
+    padding: 22px;
+  }
+}
+
+
+@media (max-width: 600px) {
+
+  .user-profile-header {
+    align-items: flex-start;
+  }
+
+  .user-profile-icon {
+    width: 55px;
+    height: 55px;
+    font-size: 21px;
+  }
+
+  .user-profile-header h2 {
+    font-size: 20px;
+  }
+
+  .user-form-actions,
+  .user-details-actions {
+    flex-direction: column;
+  }
+
+  .user-cancel-btn,
+  .user-save-btn,
+  .user-edit-link,
+  .user-back-link {
+    width: 100%;
+  }
+}

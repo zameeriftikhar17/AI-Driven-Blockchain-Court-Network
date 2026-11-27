@@ -1,0 +1,184 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  /* Primary Colors - Black, Light Blue & White */
+  --primary: #1A2A6C;
+  --primary-light: #2D4EC4;
+  --primary-dark: #0F1A4A;
+  --primary-50: #E8EEFA;
+  --primary-100: #D1DCF5;
+  --primary-200: #A3B9EB;
+  --primary-300: #7596E1;
+  --primary-400: #4773D7;
+  --primary-500: #1A2A6C;
+  --primary-600: #152258;
+  --primary-700: #101944;
+  --primary-800: #0B1130;
+  --primary-900: #06081C;
+  
+  /* Light Blue Shades */
+  --light-blue-50: #F0F7FF;
+  --light-blue-100: #E0EFFF;
+  --light-blue-200: #B8D9FF;
+  --light-blue-300: #8FC2FF;
+  --light-blue-400: #66ABFF;
+  --light-blue-500: #3D94FF;
+  --light-blue-600: #1A7AFF;
+  --light-blue-700: #0060E6;
+  --light-blue-800: #004AB3;
+  --light-blue-900: #003380;
+  
+  /* Black Shades */
+  --black: #000000;
+  --black-900: #0A0A0A;
+  --black-800: #1A1A1A;
+  --black-700: #2A2A2A;
+  --black-600: #3A3A3A;
+  --black-500: #4A4A4A;
+  --black-400: #5A5A5A;
+  --black-300: #6A6A6A;
+  --black-200: #7A7A7A;
+  --black-100: #8A8A8A;
+  
+  /* White & Grays */
+  --white: #FFFFFF;
+  --gray-50: #F8F9FA;
+  --gray-100: #F1F3F5;
+  --gray-200: #E9ECEF;
+  --gray-300: #DEE2E6;
+  --gray-400: #CED4DA;
+  --gray-500: #ADB5BD;
+  --gray-600: #6C757D;
+  --gray-700: #495057;
+  --gray-800: #343A40;
+  --gray-900: #212529;
+  
+  /* Gradients */
+  --gradient-primary: linear-gradient(135deg, #0A0A0A 0%, #1A2A6C 50%, #2D4EC4 100%);
+  --gradient-secondary: linear-gradient(135deg, #1A2A6C 0%, #2D4EC4 50%, #3D94FF 100%);
+  --gradient-hero: linear-gradient(135deg, #000000 0%, #0F1A4A 30%, #1A2A6C 60%, #2D4EC4 100%);
+  --gradient-card: linear-gradient(135deg, rgba(255,255,255,0.15) 0%, rgba(255,255,255,0.05) 100%);
+  --gradient-glass: linear-gradient(135deg, rgba(255,255,255,0.12) 0%, rgba(255,255,255,0.03) 100%);
+  
+  /* Glass Effects */
+  --glass-bg: rgba(255, 255, 255, 0.08);
+  --glass-border: rgba(255, 255, 255, 0.12);
+  --glass-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+  
+  /* Shadows */
+  --shadow-glow: 0 0 40px rgba(45, 78, 196, 0.3);
+  --shadow-heavy: 0 20px 60px rgba(0, 0, 0, 0.4);
+  --shadow-light: 0 4px 20px rgba(0, 0, 0, 0.08);
+  --shadow-card: 0 8px 32px rgba(0, 0, 0, 0.12);
+  
+  /* Text Colors */
+  --text-primary: #0A0A0A;
+  --text-secondary: #2A2A2A;
+  --text-light: #6A6A6A;
+  --text-white: #FFFFFF;
+  --text-muted: #8A8A8A;
+  
+  /* Backgrounds */
+  --bg-primary: #FFFFFF;
+  --bg-secondary: #F8F9FA;
+  --bg-dark: #0A0A0A;
+  --bg-dark-blue: #0F1A4A;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  background: var(--bg-secondary);
+  color: var(--text-primary);
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.app-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.main-content {
+  flex: 1;
+  padding-top: 80px;
+}
+
+/* Premium Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--black-900);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--gradient-secondary);
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--gradient-primary);
+}
+
+/* Selection Color */
+::selection {
+  background: var(--primary);
+  color: white;
+}
+
+/* Utility Classes */
+.gradient-text {
+  background: var(--gradient-secondary);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.gradient-text-primary {
+  background: var(--gradient-primary);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.glass-effect {
+  background: var(--glass-bg);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid var(--glass-border);
+  box-shadow: var(--glass-shadow);
+}
+
+.shadow-glow {
+  box-shadow: var(--shadow-glow);
+}
+
+.shadow-heavy {
+  box-shadow: var(--shadow-heavy);
+}
+
+.container {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .container {
+    padding: 0 1rem;
+  }
+}
